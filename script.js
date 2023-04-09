@@ -12,34 +12,45 @@ class Calculator {
     this.previousOperandTextElement = previousOperandTextElement
     this.currentOperandTextElement = currentOperandTextElement
     this.clear()
-  }
+       }
 
 clear() {
    this.currentOperand = ''
    this.previousOperand = ''
    this.operation = undefined
- }
+       }
 
 updateDisplay() {
   this.currentOperandTextElement.innerText = this.currentOperand;
-  }
+       }
 
 
 appendNumber(number) {
   if (number === '.' && this.currentOperand.includes('.')) return
   this.currentOperand = this.currentOperand.toString() + number.toString()
-   }
+       }
+
+chooseOperation(operation) {
+   if (this.currentOperand === '') return
+   if (this.previousOperand !== '') {
+   this.compute()
+       }
+  this.operation = operation
+  this.previousOperand = this.currentOperand
+  this.currentOperand = ''
+       }
+
 
 }
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
  numberButtons.forEach(button => {
-  button.addEventListener('click', (e) => {
+  button.addEventListener('click', () => {
   calculator.appendNumber(button.innerText)
-  calculator.updateDisplay(e)
+  calculator.updateDisplay()
   })
-  })
+})
 
   
   operationButtons.forEach(button => {
@@ -47,7 +58,7 @@ const calculator = new Calculator(previousOperandTextElement, currentOperandText
     calculator.chooseOperation(button.innerText)
     calculator.updateDisplay()
   })
-  })
+})
 
 
 
