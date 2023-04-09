@@ -1,5 +1,5 @@
 const numberButtons = document.querySelectorAll('.number');
-const operationsButtons = document.querySelectorAll('.operator');
+const operationButtons = document.querySelectorAll('.operator');
 const equalsButton = document.querySelector('.equal');
 const deleteButton = document.querySelector('.delete-btn');
 const allClearButton = document.querySelector('.clear-btn');
@@ -38,7 +38,15 @@ const calculator = new Calculator(previousOperandTextElement, currentOperandText
   button.addEventListener('click', (e) => {
   calculator.appendNumber(button.innerText)
   calculator.updateDisplay(e)
-    })
+  })
+  })
+
+  
+  operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+    calculator.chooseOperation(button.innerText)
+    calculator.updateDisplay()
+  })
   })
 
 
