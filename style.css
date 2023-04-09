@@ -1,16 +1,153 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+
 body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #ABCE91FF, #AA738DFF);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-
-  }
+  background: linear-gradient(to right, #ABCE91FF, #AA738DFF);
+  margin: 0;
+  padding: 0;
+}
 
 .calculator-grid {
-  
+  background-color: #a28089;
+  padding: 15px;
+  border-radius: 10px;
+  border: 4px solid black;
+}
+
+
+.btn {
+  height: 50px; 
+  width: 50px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px, solid #FFFFFF;
+  outline: none;
+  background-color: rbga(255, 255, 255, 0.75);
+}
+
+btn:hover {
+        background-color: #a9a9a9;
+}
+
+
+button.btn.number {
+  border: 4px solid #51e2f5;
+  background-color: #b28089;
+  font-size: 25px;
+  color: #51e2f5;
+}
+
+button.btn.number:hover {
+  background-color: #a9a9a9;
+}
+
+.btn.operator {
+  border: 4px solid #9df9ef;
+  border-radius: 10px;
+  background-color: #b28089;
+  font-size: 25px;
+  color: #9df9ef;
+}
+
+.btn.operator:hover {
+  background-color: #a9a9a9;
+}
+
+
+.btn.decimal {
+  border: 4px solid #edf756;
+  border-radius: 10px;
+  background-color: #b28089;
+  font-size: 25px;
+  color: #edf756;
+}
+
+
+.btn.decimal:hover {
+  background-color: #a9a9a9;
+}
+
+
+.btn.equal {
+  border: 4px solid #edf756;
+  border-radius: 10px;
+  background-color: #b28089;
+  font-size: 25px;
+  color: #edf756
+}
+
+
+.btn.equal:hover {
+  background-color: #a9a9a9;
+}
+
+.delete-btn {
+  border: 4px solid #edf756;
+  border-radius: 10px;
+  background-color: #b28089;
+  font-size: 25px;
+  color: #edf756;
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px, solid #FFFFFF;
+  outline: none;
+  background-color: rbga(255, 255, 255, 0.75);
+  width: 120px;
+}
+
+.delete-btn:hover {
+  background-color: #a9a9a9;
+}
+
+.clear-btn {
+  border: 4px solid #edf756;
+  border-radius: 10px;
+  background-color: #b28089;
+  font-size: 25px;
+  color: #edf756;
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px, solid #FFFFFF;
+  outline: none;
+  background-color: rbga(255, 255, 255, 0.75);
+  width: 120px;
+  margin-left: 5px;
+}
+
+.clear-btn:hover {
+  background-color: #a9a9a9;
+}
+
+#output {
+  width: 250px;
+  border: 4px solid #a28089;
+  height: 75px;
+  margin-left: px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.previous-operand {
+  color: rgba(255,255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.current-operand {
+  color: white;
+  font-size: 2rem;
 }
