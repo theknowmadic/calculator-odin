@@ -25,7 +25,22 @@ updateDisplay() {
       }
 
 
-
+getDisplayNumber(number) {
+  const stringNumber = number.toString()
+  const integerDigits = parseFloat(stringNumber.split('.')[0])
+  const decimalDigits = stringNumber.split('.')[1]
+  let integerDisplay
+  if (isNaN(integerDigits)) {
+    integerDisplay = ''
+      } else {
+      integerDisplay = integerDigits.toLocaleString('en', {maximumFractionDigits: 0})
+      }
+        if (decimalDigits != null) {
+      return `${integerDisplay}.${decimalDigits}`
+      } else {
+      return integerDisplay
+      }
+      }
 
 
 appendNumber(number) {
@@ -58,7 +73,7 @@ compute() {
     case '-':
       computation = prev - current
       break
-    case '*':
+    case 'x':
       computation = prev * current
       break
     case '÷':
@@ -74,10 +89,19 @@ compute() {
 
 delete() {
   this.currentOperand = this.currentOperand.toString().slice(0, -1)
+        }
+           
+roundNumber (number){
+  return Math.round(number * 1000) / 1000;
+}
+
 }
 
 
-}
+
+
+
+
 
 
 const numberButtons = document.querySelectorAll('.number');
