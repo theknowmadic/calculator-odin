@@ -43,8 +43,10 @@ getDisplayNumber(number) {
       }
 
 
+
+
 appendNumber(number) {
-  if (number === '.' && this.currentOperand.includes('.')) return
+   if (number === '.' && this.currentOperand.includes('.')) return
   this.currentOperand = this.currentOperand.toString() + number.toString()
        }
 
@@ -93,9 +95,17 @@ delete() {
            
 roundNumber (number){
   return Math.round(number * 1000) / 1000;
+        }
+
+
+addDecimal () {
+  this.currentOperand += '.';
+         }
+
+
+
 }
 
-}
 
 
 
@@ -104,6 +114,8 @@ roundNumber (number){
 
 
 
+
+const decimalButton = document.querySelector('.decimal')
 const numberButtons = document.querySelectorAll('.number');
 const operationButtons = document.querySelectorAll('.operator');
 const equalsButton = document.querySelector('.equal');
@@ -111,6 +123,8 @@ const deleteButton = document.querySelector('.delete-btn');
 const allClearButton = document.querySelector('.clear-btn');
 const previousOperandTextElement = document.querySelector('.previous-operand');
 const currentOperandTextElement = document.querySelector('.current-operand');
+
+
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
 
@@ -149,3 +163,7 @@ deleteButton.addEventListener('click', button => {
   calculator.updateDisplay()
 })
 
+decimalButton.addEventListener('click', button => {
+  calculator.addDecimal()
+  calculator.updateDisplay()
+})
