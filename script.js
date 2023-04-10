@@ -1,6 +1,3 @@
-
-
-
 class Calculator {
   constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement
@@ -41,8 +38,6 @@ getDisplayNumber(number) {
       return integerDisplay
       }
       }
-
-
 
 
 appendNumber(number) {
@@ -101,18 +96,7 @@ roundNumber (number){
 addDecimal () {
   this.currentOperand += '.';
          }
-
-
-
 }
-
-
-
-
-
-
-
-
 
 
 const decimalButton = document.querySelector('.decimal')
@@ -123,7 +107,6 @@ const deleteButton = document.querySelector('.delete-btn');
 const allClearButton = document.querySelector('.clear-btn');
 const previousOperandTextElement = document.querySelector('.previous-operand');
 const currentOperandTextElement = document.querySelector('.current-operand');
-
 
 
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement)
